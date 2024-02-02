@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Baju Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand&display=swap" rel="stylesheet">
+
+    <style>
+        html{
+        scroll-behavior: smooth;
+        }
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: url('aesthetic.JPG') center/cover no-repeat fixed;
+            color: #fff;
+            margin: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .cool-header {
+            background: url('header.jpg') center/cover no-repeat;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .cool-heading {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+        }
+        .cool-nav {
+            background-color: #9b59b6;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #fff;
+        }
+        .nav-link {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #f5baff;
+        }
+        .cool-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .cool-product {
+            background-color: #fdf9fe71;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            width: 300px;
+            height: 570px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cool-product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-title {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .product-image {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+        .product-description {
+            color: #000000;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .product-price {
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .buy-button {
+            background-color: #9b59b6;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #8e44ad;
+        }
+        .cool-info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cool-info:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .info-title {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .info-description {
+            color: #000000;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .about-us-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: center;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-us-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .about-us-heading {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .about-us-description {
+            color: #000000;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #8e44ad;
+            color: #ccc;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ffffff;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #6a00ff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .popup-content {
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="cool-header">
+        <h1 class="cool-heading">Verntion Outfit</h1>
+        <p class="tagline">Temukan gaya Anda dengan koleksi baju terbaru kami.</p>
+    </header>
+    <nav class="cool-nav">
+        <a href="#" class="nav-link">Beranda</a>
+        <a href="#" class="nav-link">Katalog</a>
+        <a href="#about-us" class="nav-link">Tentang Kami</a>
+        <a href="tel:082328600185" class="nav-link">Hubungi Kami</a>
+    </nav>
+    <section class="cool-section">
+        <div class="product cool-product">
+            <h2 class="product-title">Baju Pahlawan</h2>
+            <img src="baju.png" alt="Baju Pahlawan" class="product-image">
+            <p class="product-description">Perkenalkan, Baju Pahlawan Nippon kami, didesain untuk memancarkan semangat pahlawan Jepang dengan bahan berkualitas tinggi dan desain yang menggabungkan keberanian tradisional dengan sentuhan modern yang memukau.</p>
+            <p class="product-price"><strong>Harga: Rp50.000</strong></p>
+            <button class="buy-button">Beli Sekarang</button>
+        </div>
+        <div class="cool-info">
+            <h2 class="info-title">Welcome!</h2>
+            <p class="info-description">Selamat datang di Verntion Outfit, destinasi terbaik untuk menemukan gaya Anda! Kami bangga menyajikan koleksi baju terbaru dengan desain yang unik dan kualitas terbaik. Verntion berkomitmen untuk memberikan pengalaman berbelanja yang memuaskan dan menyenangkan bagi pelanggan kami.</p>
+            <p class="info-description">Dengan semangat inovasi, kami terus memperbarui koleksi kami untuk memenuhi tren terkini dan kebutuhan fashion Anda. Di sini, Anda bukan hanya mendapatkan pakaian berkualitas tinggi, tetapi juga gaya yang mencerminkan kepribadian Anda.</p>
+            <p class="info-description">Terima kasih atas dukungan Anda dan selamat berbelanja di Verntion Outfit!</p>
+        </div>
+        <div class="product cool-product">
+            <h2 class="product-title">Baju FREE FIRE</h2>
+            <img src="ff.png" alt="Baju FREE FIRE" class="product-image">
+            <p class="product-description">Baju Free Fire Alok kami, menghadirkan gaya keren yang terinspirasi oleh karakter ikonik Alok dalam game, memberikan kombinasi sempurna antara desain stylish dan kenyamanan untuk penampilan tak terkalahkan di medan pertempuran Free Fire.</p>
+            <p class="product-price"><strong>Harga: Rp60.000</strong></p>
+            <button class="buy-button">Beli Sekarang</button>
+        </div>
+    </section>
+    <section id="about-us" class="about-us-container">
+        <h2 class="about-us-heading">Tentang Kami</h2>
+        <p class="about-us-description">Verntion Outfit adalah toko baju online yang menghadirkan koleksi terbaik untuk Anda. Dengan kombinasi desain yang unik dan kualitas terbaik, kami berusaha memenuhi kebutuhan fashion Anda. Kami percaya bahwa pakaian bukan hanya sekadar busana, tetapi juga cerminan kepribadian Anda.</p>
+        <p class="about-us-description">Oleh karena itu, kami selalu berinovasi untuk memberikan pengalaman berbelanja yang tak terlupakan dan memuaskan bagi pelanggan kami. Terima kasih atas dukungan Anda dan selamat berbelanja di Verntion Outfit!</p>
+    </section>
+        <section class="cool-section">
+            <div class="cool-info">
+                <h2 class="info-title">Hubungi Kami</h2>
+                <p class="info-description">Kami senang bisa membantu Anda! Jangan ragu untuk menghubungi kami melalui nomor berikut:</p>
+                <p class="info-description"><strong>Nomor Kontak: <a href="tel:082328600185">082328600185</a></strong></p>
+            </div>
+        </section>
+    <footer><p>&copy; Verntion</p></footer>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Kamu telah berhasil belanja!</p>
+        </div>
+    </div>
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+    
+            setTimeout(function () {
+                closePopup();
+            }, 5000);
+        }
+    
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            var buyButtons = document.querySelectorAll(".buy-button");
+    
+            buyButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    showPopup();
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
